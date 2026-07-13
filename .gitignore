@@ -1,0 +1,27 @@
+# Environment
+.env
+.env.*
+
+# Virtual Environments
+.venv/
+.venv-1/
+
+# Python
+__pycache__/
+backend/__pycache__/
+*.py[cod]
+
+# macOS
+.DS_Store
+
+# Generated files
+*.docx
+*.json
+*.txt
+*.png
+
+# VS Code
+.vscode/
+
+# Streamlit cache
+.streamlit/
