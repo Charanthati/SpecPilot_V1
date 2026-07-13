@@ -3,6 +3,27 @@ import streamlit as st
 import tempfile
 import os
 
+# ---------------- Password Protection ----------------
+
+PASSWORD = st.secrets["APP_PASSWORD"]
+
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    st.title("🔒 SpecPilot")
+
+    password = st.text_input("Enter Password", type="password")
+
+    if st.button("Login"):
+        if password == PASSWORD:
+            st.session_state.authenticated = True
+            st.rerun()
+        else:
+            st.error("Incorrect password")
+
+    st.stop()
+    
 from backend.parser import extract_text
 from backend.generator import generate_csv_documentation
 from backend.document_generator import create_csv_document
