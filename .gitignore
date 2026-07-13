@@ -17,7 +17,6 @@ backend/__pycache__/
 # Generated files
 *.docx
 *.json
-*.txt
 *.png
 
 # VS Code
